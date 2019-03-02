@@ -1,6 +1,6 @@
 import { Legend, Player, RawPlayerResult, Platform } from "..";
 
-    const getLegend = (data: string): Legend  => {
+    const getLegend = (data: string | number): Legend  => {
 
         return Legend[data];
 

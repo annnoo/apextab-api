@@ -3,15 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./lib/index.js",
     "build": "tsc"
   },
-  "author": "",
+  "author": "Annnoo",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^11.10.0",
-    "request": "^2.88.0"
+    "@types/node": "^11.10.0"
+  },
+  "keywords": [
+    "apex",
+    "apexlegends",
+    "apextab",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annnoo/apextab-api.git"
   }
 }
