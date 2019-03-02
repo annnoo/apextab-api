@@ -11,7 +11,11 @@ bower install apextab-api --save
 ## Usage 
 ```js
 
-const APEXTAB = require('apextab-api');
+const API = require('apextab-api');
+const ApexTab_API  = API.Apextab_API;
 
-APE
+
+ApexTab_API.searchPlayer("Anno",API.Platform.PC).then((results) => {
+    console.log(results);
+});
 ```
