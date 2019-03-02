@@ -1,4 +1,7 @@
 # Node.js ApexTab-API Wrapper
+[ApexTab](https://apextab.com/) 
+
+[API Documentation](https://github.com/Tabwire/ApexTab-API)
 
 ## Installation 
 ```sh
@@ -19,3 +22,4 @@ ApexTab_API.searchPlayer("Anno",API.Platform.PC).then((results) => {
     console.log(results);
 });
 ```
+
