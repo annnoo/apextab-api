@@ -1,7 +1,7 @@
-import { Platform } from "../Platform";
-import { Legend } from "../Legend";
+import { Platform } from "../../Static/Platform";
+import { Legend } from "../../Static/Legend";
 
-export interface PlayerResult {
+export interface PlayerSearchResult {
     aid: string;
     name: string;
     platform: Platform;

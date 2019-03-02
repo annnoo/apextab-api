@@ -1,6 +1,6 @@
 
 
-export default interface RawPlayerResult {
+export default interface RawPlayer {
         playerfound: boolean;
         aid: string;
         name: string;

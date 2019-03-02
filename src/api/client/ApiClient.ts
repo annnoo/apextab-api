@@ -1,6 +1,7 @@
 import * as https from "https";
-import { Platform, RawPlayerResult, PlayerResult } from "..";
+import { Platform, RawPlayerResult, PlayerResult, SearchResults, Player } from "..";
 import { ApextabConfig } from "./Config";
+import { RAW_PLAYER_RESULT_TO_PLAYER } from "../util/util";
 
 export class ApiClient {
     
@@ -18,10 +19,8 @@ export class ApiClient {
     }
 
     public static getRawPlayer(playerId: string): Promise < RawPlayerResult > {
-        console.log("--GetRawPlayer:"+playerId);
         let p = new Promise < RawPlayerResult > ((resolve, reject) => {
                 const path = ApiClient.CONFIG.APEXTAB_API + ApiClient.CONFIG.ENDPOINTS.PLAYER + '?aid='+ playerId;
-                console.log("--GetRawPlayer Path:"+path);
 
                 let params = {
                     host: ApiClient.CONFIG.APEXTAB_HOST_URL,
@@ -35,31 +34,21 @@ export class ApiClient {
 
                     }
                 };
-                console.log("--GetRawPlayer Params:"+params);
 
     
 
                 let req = https.request(params, (res) => {
 
-                    res.on('error', (args) => {
-                        console.log(args);
-                    })
+                   
                     
-                    res.on('close', (args) => {
-                        console.log(args);
-                    })
-                    res.on('readable',(args) => {
-                        console.log(args);
-                    })
+                    
                     let body: any | RawPlayerResult = [];
                     res.on('data', (data) => {
                         body.push(data);
-                        console.log(data);
                     })
                     res.on('end', () => {
                         try {
                             body = < RawPlayerResult > JSON.parse(Buffer.concat(body).toString());
-                            console.log(body);
                         } catch (e) {
                             reject(e);
                         }
@@ -74,7 +63,6 @@ export class ApiClient {
                     
                 });
                 req.end();
-                console.log(req);
 
 
                
@@ -85,26 +73,93 @@ export class ApiClient {
         
     }
 
-    public static async searchPlayers(playerId: string, platform: Platform,){
-        const path = ApiClient.CONFIG.APEXTAB_API + ApiClient.CONFIG.ENDPOINTS.SEARCH + '?platform='+ platform+"&search="+playerId;
-                const params = {
-                    host: "google.com",
+
+    
+    public static getPlayer(playerId: string): Promise < Player > {
+        let p = new Promise < Player > ((resolve, reject) => {
+                const path = ApiClient.CONFIG.APEXTAB_API + ApiClient.CONFIG.ENDPOINTS.PLAYER + '?aid='+ playerId;
+
+                let params = {
+                    host: ApiClient.CONFIG.APEXTAB_HOST_URL,
+                    port:443,
                     
                     path : path,
                     method: 'GET',
+                    headers: {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36' ,
+                        accept: '*/*'
+
+                    }
                 };
-                return new Promise((resolve,reject)=> {
+
+    
+
                 let req = https.request(params, (res) => {
 
-
+                   
+                    
+                    
                     let body: any | RawPlayerResult = [];
+                    let player: Player;
                     res.on('data', (data) => {
                         body.push(data);
-                        console.log(data);
                     })
                     res.on('end', () => {
                         try {
                             body = < RawPlayerResult > JSON.parse(Buffer.concat(body).toString());
+                            player = RAW_PLAYER_RESULT_TO_PLAYER(body);
+                        } catch (e) {
+                            reject(e);
+                        }
+                        resolve(player);
+                    });
+                   
+
+                    req.on('error', (err) => {
+                        reject(err);
+                    })
+                  
+                    
+                });
+                req.end();
+
+
+               
+            });
+            return p;
+            
+
+        
+    }
+
+    public static async searchPlayers(playerId: string, platform: Platform) : Promise<SearchResults>{
+        const path = ApiClient.CONFIG.APEXTAB_API + ApiClient.CONFIG.ENDPOINTS.SEARCH + '?platform='+ platform+"&search="+playerId;
+              
+
+                let params = {
+                    host: ApiClient.CONFIG.APEXTAB_HOST_URL,
+                    port:443,
+                    
+                    path : path,
+                    method: 'GET',
+                    headers: {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36' ,
+                        accept: '*/*'
+
+                    }
+                };
+                let p =  new Promise<SearchResults>((resolve,reject)=> {
+                let req = https.request(params, (res) => {
+
+
+                    let body: any | SearchResults = [];
+
+                    res.on('data', (data) => {
+                        body.push(data);
+                    })
+                    res.on('end', () => {
+                        try {
+                            body = < SearchResults > JSON.parse(Buffer.concat(body).toString());
                         } catch (e) {
                             reject(e);
                         }
@@ -115,11 +170,13 @@ export class ApiClient {
                     req.on('error', (err) => {
                         reject(err);
                     })
-                    req.end();
+                
                     
                 });
+                req.end();
+            })
+                return p;
+            
 
-    })
-}
-
+    }
 }

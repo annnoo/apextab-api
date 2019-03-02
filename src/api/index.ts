@@ -1,10 +1,10 @@
-import { Legend } from "./Legend";
-import {Player} from './Player'
-import {PlayerResult} from './Result/PlayerResult'
-import {SearchResults} from './Result/SearchResults'
+import { Legend } from "./Static/Legend";
+import {Player} from './API/Player/Player'
+import {PlayerSearchResult} from './API/Search/PlayerSearchResult'
+import {SearchResults} from './API/Search/SearchResults'
 
-import { Platform } from "./Platform";
-import RawPlayerResult from "./rawresults/RawPlayerResult";
+import { Platform } from "./Static/Platform";
+import RawPlayer from "./API/Player/RawPlayer";
 
 
-export {Legend, Player, PlayerResult, SearchResults, Platform, RawPlayerResult}
+export {Legend, Player, PlayerSearchResult as PlayerResult, SearchResults, Platform, RawPlayer as RawPlayerResult}

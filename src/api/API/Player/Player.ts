@@ -1,5 +1,5 @@
-import { Legend } from "./Legend";
-import { Platform } from "./Platform"
+import { Legend } from "../../Static/Legend";
+import { Platform } from "../../Static/Platform"
 
 
 export interface Player {
