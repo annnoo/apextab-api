@@ -1,5 +1,5 @@
 import * as https from "https";
-import { Platform, RawPlayerResult, PlayerResult, SearchResults, Player } from "..";
+import { Platform, RawPlayer, PlayerResult, SearchResults, Player } from "..";
 import { ApextabConfig } from "./Config";
 import { RAW_PLAYER_RESULT_TO_PLAYER } from "../util/util";
 
@@ -18,8 +18,8 @@ export class ApiClient {
 
     }
 
-    public static getRawPlayer(playerId: string): Promise < RawPlayerResult > {
-        let p = new Promise < RawPlayerResult > ((resolve, reject) => {
+    public static getRawPlayer(playerId: string): Promise < RawPlayer > {
+        let p = new Promise < RawPlayer > ((resolve, reject) => {
                 const path = ApiClient.CONFIG.APEXTAB_API + ApiClient.CONFIG.ENDPOINTS.PLAYER + '?aid='+ playerId;
 
                 let params = {
@@ -42,13 +42,13 @@ export class ApiClient {
                    
                     
                     
-                    let body: any | RawPlayerResult = [];
+                    let body: any | RawPlayer = [];
                     res.on('data', (data) => {
                         body.push(data);
                     })
                     res.on('end', () => {
                         try {
-                            body = < RawPlayerResult > JSON.parse(Buffer.concat(body).toString());
+                            body = < RawPlayer > JSON.parse(Buffer.concat(body).toString());
                         } catch (e) {
                             reject(e);
                         }
@@ -99,14 +99,14 @@ export class ApiClient {
                    
                     
                     
-                    let body: any | RawPlayerResult = [];
+                    let body: any | RawPlayer = [];
                     let player: Player;
                     res.on('data', (data) => {
                         body.push(data);
                     })
                     res.on('end', () => {
                         try {
-                            body = < RawPlayerResult > JSON.parse(Buffer.concat(body).toString());
+                            body = < RawPlayer > JSON.parse(Buffer.concat(body).toString());
                             player = RAW_PLAYER_RESULT_TO_PLAYER(body);
                         } catch (e) {
                             reject(e);

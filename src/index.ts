@@ -2,7 +2,7 @@
 
 import * as https from "https";
 import {
-    RawPlayerResult,
+    RawPlayer,
     Platform,
     SearchResults,
     Player,
@@ -19,7 +19,7 @@ import {
 export module Apextab_API {
 
 
-    export function getRawPlayer(playerId: string): Promise < RawPlayerResult > {
+    export function getRawPlayer(playerId: string): Promise < RawPlayer > {
 
         return ApiClient.getRawPlayer(playerId);
 
@@ -40,4 +40,14 @@ export module Apextab_API {
 
     }
 
+
+
+
+}
+export {
+    RawPlayer,
+    Platform,
+    SearchResults,
+    Player,
+    Legend
 }

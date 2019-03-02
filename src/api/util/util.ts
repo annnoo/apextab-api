@@ -1,11 +1,11 @@
-import { Legend, Player, RawPlayerResult, Platform } from "..";
+import { Legend, Player, RawPlayer, Platform } from "..";
 
     const getLegend = (data: string | number): Legend  => {
 
         return Legend[data];
 
     }
-   export const  RAW_PLAYER_RESULT_TO_PLAYER = (data:RawPlayerResult) => {
+   export const  RAW_PLAYER_RESULT_TO_PLAYER = (data:RawPlayer) => {
        
             let player: Player;
             player = {
