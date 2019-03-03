@@ -1,16 +1,12 @@
 ///<reference path="../node_modules/@types/node/index.d.ts"/>
-
-import * as https from "https";
 import {
     RawPlayer,
     Platform,
     SearchResults,
     Player,
-    Legend
+    Legend,
+    PlayerResult
 } from './api/index'
-import {
-    stringify
-} from "querystring";
 import {
     ApiClient
 } from "./api/client/ApiClient";
@@ -40,14 +36,16 @@ export module Apextab_API {
 
     }
 
-
+   
 
 
 }
 export {
     RawPlayer,
-    Platform,
     SearchResults,
+    PlayerResult,
     Player,
+
+    Platform,
     Legend
 }

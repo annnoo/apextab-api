@@ -1,5 +1,5 @@
-import { PlayerSearchResult } from "./PlayerSearchResult";
+import { PlayerResult } from "./PlayerSearchResult";
 export interface SearchResults {
-    results: PlayerSearchResult[];
+    results: PlayerResult[];
     totalresults: number;
 }

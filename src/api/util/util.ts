@@ -1,10 +1,6 @@
 import { Legend, Player, RawPlayer, Platform } from "..";
+import { ResolveLegend } from "../Static/Legend";
 
-    const getLegend = (data: string | number): Legend  => {
-
-        return Legend[data];
-
-    }
    export const  RAW_PLAYER_RESULT_TO_PLAYER = (data:RawPlayer) => {
        
             let player: Player;
@@ -16,7 +12,7 @@ import { Legend, Player, RawPlayer, Platform } from "..";
                 skillratio: data.skillratio,
                 visits: Number(data.visits),
                 avatar: data.avatar,
-                legend: getLegend(data.legend),
+                legend: ResolveLegend(data.legend as keyof typeof Legend),
                 level: Number(data.level),
                 kills: Number(data.kills),
                 headshots: Number(data.headshots),
