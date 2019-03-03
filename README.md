@@ -6,6 +6,9 @@ A simple Node.js Wrapper for the *Apex Legends* API provided by ApexTab.
 - [ApexTab](https://apextab.com/) 
 - [API Documentation](https://github.com/Tabwire/ApexTab-API)
 
+___
+
+
 - [Node.js ApexTab-API Wrapper](#nodejs-apextab-api-wrapper)
   - [Installation](#installation)
   - [Usage](#usage)
