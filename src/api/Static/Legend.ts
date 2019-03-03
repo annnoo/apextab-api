@@ -8,3 +8,6 @@ export enum Legend {
     Pathfinder = "Pathfinder",
     Wraith = "Pathfinder"
 }
+export const ResolveLegend = (data: keyof typeof Legend): Legend  => {
+    return Legend[data];
+}

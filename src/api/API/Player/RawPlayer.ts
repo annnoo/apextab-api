@@ -1,6 +1,4 @@
-
-
-export default interface RawPlayer {
+export interface RawPlayer {
         playerfound: boolean;
         aid: string;
         name: string;

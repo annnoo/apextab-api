@@ -29,4 +29,23 @@ ApexTab_API.searchPlayer("Anno",API.Platform.PC).then((results) => {
 
 #### Search Player
 
+##### Usage
+
 #### Get Player
+
+### Types
+
+#### APIClient
+
+
+#### Player
+#### RawPlayer
+
+#### PlayerSearchResult
+#### SearchResults
+
+### Enums
+
+#### Platform
+#### Legend
+
