@@ -1,7 +1,11 @@
 # Node.js ApexTab-API Wrapper
-[ApexTab](https://apextab.com/) 
 
-[API Documentation](https://github.com/Tabwire/ApexTab-API)
+A simple Node.js Wrapper for the *Apex Legends* API provided by ApexTab. 
+
+
+- [ApexTab](https://apextab.com/) 
+
+- [API Documentation](https://github.com/Tabwire/ApexTab-API)
 
 - [Node.js ApexTab-API Wrapper](#nodejs-apextab-api-wrapper)
   - [Installation](#installation)
@@ -105,6 +109,19 @@ Kills:0
 
 ## Documentation
 
+ - [Functions](#functions)
+      - [Search Player](#search-player)
+        - [Usage](#usage-1)
+      - [Get Player](#get-player)
+        - [Usage](#usage-2)
+    - [Types](#types)
+      - [Player](#player)
+      - [RawPlayer](#rawplayer)
+      - [PlayerSearchResult](#playersearchresult)
+      - [SearchResults](#searchresults)
+    - [Enums](#enums)
+      - [Platform](#platform)
+      - [Legend](#legend)
 
 ### Functions
 
