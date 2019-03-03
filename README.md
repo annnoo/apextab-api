@@ -3,6 +3,26 @@
 
 [API Documentation](https://github.com/Tabwire/ApexTab-API)
 
+- [Node.js ApexTab-API Wrapper](#nodejs-apextab-api-wrapper)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Documentation](#documentation)
+    - [Functions](#functions)
+      - [Search Player](#search-player)
+        - [Usage](#usage-1)
+      - [Get Player](#get-player)
+        - [Usage](#usage-2)
+    - [Types](#types)
+      - [Player](#player)
+      - [RawPlayer](#rawplayer)
+      - [PlayerSearchResult](#playersearchresult)
+      - [SearchResults](#searchresults)
+    - [Enums](#enums)
+      - [Platform](#platform)
+      - [Legend](#legend)
+  - [Contributing](#contributing)
+
+
 ## Installation 
 ```sh
 npm install apextab-api --save
