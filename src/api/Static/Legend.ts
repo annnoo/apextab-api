@@ -6,7 +6,7 @@ export enum Legend {
     Lifeline = "Lifeline",
     Mirage = "Mirage",
     Pathfinder = "Pathfinder",
-    Wraith = "Pathfinder"
+    Wraith = "Wraith"
 }
 export const ResolveLegend = (data: keyof typeof Legend): Legend  => {
     return Legend[data];

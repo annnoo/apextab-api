@@ -6,5 +6,6 @@ export declare enum Legend {
     Lifeline = "Lifeline",
     Mirage = "Mirage",
     Pathfinder = "Pathfinder",
-    Wraith = "Pathfinder"
+    Wraith = "Wraith"
 }
+export declare const ResolveLegend: (data: "Bangalore" | "Bloodhound" | "Caustic" | "Gibraltar" | "Lifeline" | "Mirage" | "Pathfinder" | "Wraith") => Legend;

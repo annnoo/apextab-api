@@ -42,7 +42,6 @@ export module Apextab_API {
 }
 export {
     RawPlayer,
-    ApiClient,
     SearchResults,
     PlayerResult,
     Player,

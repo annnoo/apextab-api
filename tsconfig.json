@@ -61,6 +61,7 @@
   "exclude": [
     "node_modules",
     ".npm",
-    "lib"
+    "lib",
+    "examples"
   ]
 }

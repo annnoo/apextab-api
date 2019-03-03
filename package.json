@@ -11,7 +11,9 @@
   "author": "Annnoo",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^11.10.0"
+    "@types/node": "^11.10.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.3.3333"
   },
   "keywords": [
     "apex",
