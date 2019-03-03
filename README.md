@@ -23,3 +23,10 @@ ApexTab_API.searchPlayer("Anno",API.Platform.PC).then((results) => {
 });
 ```
 
+## Documentation
+
+### Functions
+
+#### Search Player
+
+#### Get Player
