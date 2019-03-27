@@ -286,7 +286,7 @@ export interface SearchResults {
 Enum which stores ID for corresponding Platform
 
 * PC = "pc"
-* PS4 = "ps4"
+* PS4 = "psn"
 * XBOX_ONE = "xbl"
 
 #### Legend
